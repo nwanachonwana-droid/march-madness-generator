@@ -10,14 +10,14 @@ interface BracketGeneratorProps {
 
 export function BracketGenerator({ tournamentId, tournamentYear }: BracketGeneratorProps) {
   const [generating, setGenerating] = useState(false);
-  const [brackets, setBrackets] = useState<GeneratedBracket[loadBrackets]>([]);
+  const [brackets, setBrackets] = useState<GeneratedBracket[]>([]);
   const [message, setMessage] = useState('');
   const [filter, setFilter] = useState<string>('all');
   const [selectedBracket, setSelectedBracket] = useState<any>(null);
 
   useEffect(() => {
     loadBrackets();
-  }, [loadBrackets]);
+  }, []);
 
   const loadBrackets = async () => {
     try {
