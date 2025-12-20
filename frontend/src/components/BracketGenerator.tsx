@@ -10,14 +10,14 @@ interface BracketGeneratorProps {
 
 export function BracketGenerator({ tournamentId, tournamentYear }: BracketGeneratorProps) {
   const [generating, setGenerating] = useState(false);
-  const [brackets, setBrackets] = useState<GeneratedBracket[]>([]);
+  const [brackets, setBrackets] = useState<GeneratedBracket[loadBrackets]>([]);
   const [message, setMessage] = useState('');
   const [filter, setFilter] = useState<string>('all');
   const [selectedBracket, setSelectedBracket] = useState<any>(null);
 
   useEffect(() => {
     loadBrackets();
-  }, []);
+  }, [loadBrackets]);
 
   const loadBrackets = async () => {
     try {
@@ -50,7 +50,7 @@ export function BracketGenerator({ tournamentId, tournamentYear }: BracketGenera
     try {
       await generateApi.deleteBrackets(tournamentId);
       setMessage('✅ Deleted all brackets');
-      setBrackets([]);
+      setBrackets([loadBrackets]);
     } catch (error) {
       setMessage('❌ Delete failed');
     }

@@ -117,25 +117,6 @@ export function BracketExport({ brackets, tournamentYear }: BracketExportProps) 
     window.URL.revokeObjectURL(url);
   };
 
-  const exportSingleBracket = async (bracketId: number) => {
-    const response = await fetch(`http://localhost:8000/api/v1/tournament/1/brackets`);
-    const fullBrackets = await response.json();
-    const bracket = fullBrackets.find((b: any) => b.id === bracketId);
-    
-    if (!bracket) {
-      alert('Bracket not found');
-      return;
-    }
-    
-    const textContent = formatBracketReadable(bracket);
-    const blob = new Blob([textContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `bracket_${bracketId}_${bracket.strategy}.txt`;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  };
 
   const exportToCSV = () => {
     let csv = 'Bracket_ID,Strategy,Pool_Tag,Champion,Final_Four_1,Final_Four_2,Final_Four_3,Final_Four_4,Expected_Score,Upset_Count\n';
