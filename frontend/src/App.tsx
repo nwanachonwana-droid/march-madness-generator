@@ -176,7 +176,7 @@ function App() {
                 color: '#6b7280',
                 fontSize: '1.125rem'
               }}>
-                Using the 83.6% accurate KenPom model
+                Using KenPom data (68% base accuracy, up to 75% with logistic regression)
               </p>
               <div style={{ 
                 marginTop: '1rem',
