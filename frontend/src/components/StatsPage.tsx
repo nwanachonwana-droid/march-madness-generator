@@ -12,10 +12,10 @@ interface Visualization {
 const visualizations: Visualization[] = [
   {
     id: 'kenpom-accuracy',
-    title: 'KenPom Model Accuracy: 75.3%',
+    title: 'KenPom Model Accuracy: 68.4% (Base) → 75.3% (Logistic Regression)',
     subtitle: 'Prediction accuracy by team quality difference',
     imagePath: '/visualizations/viz_kenpom_accuracy.png',
-    keyFinding: 'Our model correctly predicts 75.3% of tournament games using KenPom efficiency ratings',
+    keyFinding: 'Simple AdjEM comparison achieves 68.4% accuracy. Logistic regression improves this to 75.3%',
     insights: [
       'Larger AdjEM gaps lead to higher prediction accuracy',
       'Games with 15+ point AdjEM difference are predicted correctly 95%+ of the time',
