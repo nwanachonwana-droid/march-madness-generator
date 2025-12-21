@@ -19,8 +19,8 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://*.vercel.app",  # Allow all Vercel preview deployments
-    os.getenv("FRONTEND_URL", ""),  # Production frontend URL from environment
+    "https://kaleidoscopic-sorbet-70ce25.netlify.app",  # Your Netlify URL
+    "https://*.netlify.app",  # All Netlify deployments
 ]
 
 app.add_middleware(
