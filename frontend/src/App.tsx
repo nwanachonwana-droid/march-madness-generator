@@ -6,6 +6,7 @@ import { StatsPage } from './components/StatsPage';
 type Page = 'generator' | 'stats';
 
 function App() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tournaments, setTournaments] = useState<Tournament[]>([]);
   const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null);
   const [loading, setLoading] = useState(true);

@@ -17,6 +17,7 @@ export function BracketGenerator({ tournamentId, tournamentYear }: BracketGenera
 
   useEffect(() => {
     loadBrackets();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadBrackets = async () => {
