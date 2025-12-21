@@ -50,7 +50,7 @@ export function BracketGenerator({ tournamentId, tournamentYear }: BracketGenera
     try {
       await generateApi.deleteBrackets(tournamentId);
       setMessage('✅ Deleted all brackets');
-      setBrackets([loadBrackets]);
+      setBrackets([]);
     } catch (error) {
       setMessage('❌ Delete failed');
     }
